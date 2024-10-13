@@ -1,0 +1,19 @@
+[[redirects]]
+  from = "https://protfolio-mbktechstudio.netlify.app/*"
+  to = "https://portfolio.mbktechstudio.com/:splat"
+  status = 301
+  force = true
+
+
+[[redirects]]
+  from = "https://protfolio.mbktechstudio.com/*"
+  to = "https://portfolio.mbktechstudio.com/:splat"
+  status = 301
+  force = true
+
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
