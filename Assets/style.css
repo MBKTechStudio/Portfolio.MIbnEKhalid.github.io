@@ -8,7 +8,16 @@
     text-decoration: none;
     scroll-behavior: smooth;
 }
-
+a{
+  transition: all 0.4s ease;
+}
+a:visited {
+  color: #377a77;
+}
+a:hover {
+  color: #9eb5f7;  
+  transition: all 0.4s ease;
+}
 body {
     background-color: rgb(10, 10, 10);
 }
@@ -975,3 +984,25 @@ form p {
     font-size: 18px;
     font-weight: 500;
 }
+
+
+    .ssmedis {
+        padding: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .ssmedis a {
+        color: #377a77;
+        font-size: 40px;
+        margin: 0 6px;
+        transition: all 0.3s ease;
+    }
+
+    .ssmedis a:hover {
+        color: #8c8e96;
+        transition: all 0.4s ease;
+    }
