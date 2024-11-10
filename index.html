@@ -79,6 +79,40 @@
         flex-wrap: wrap;
         display: flex;
     }
+
+    .notification {
+        padding: 10px;
+        border-radius: 8px;
+        color: #333;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+    }
+
+    .notification.is-form {
+        padding: 15px;
+        background-color: #eef8ff;
+        border: 1px solid #a7d4ff;
+        color: #000000 !important;
+        /*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    }
+
+    .notification.is-link {
+        background-color: #fff8e1;
+        border: 1px solid #ffe082;
+        color: #8a6d3b !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .notification.is-info {
+        margin: 10px 0;
+        background-color: #d1ecf1;
+        border: 1px solid #bee5eb;
+        color: #0c5460 !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .notification p{
+        color: #136b7a;
+    }
 </style>
 
 <!-- navgaition menu -->
@@ -362,190 +396,45 @@
                 <input type="hidden" name="access_key" value="d2837145-a5b5-49af-b269-cb79e9b57456">
                 <input class="input" type="hidden" name="Timestamp">
                 <input type="hidden" name="pageUrl">
+                <input class="input" type="hidden" name="Subject" value="ContactUSMain">
+                <input class="input" type="hidden" name="Number">
+ 
 
-                <div class="field">
-
-                    <label class="label required-label">Subject</label>
-
-                    <div class="control">
-
-                        <div class="select">
-                            <select name="Subject" id="subjectSelect" required="">
-                                <option value="" disabled="" selected="">Select a subject</option>
-                                <option value="Feedback">Feedback</option>
-                                <option value="Collaboration">Collaboration</option>
-                                <option value="Support">Support</option>
-                                <option value="General Inquiry">General Inquiry</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Support Field Appear When Support is Selected -->
-
-                <div class="field supportfield" style="display: none;">
-
-                    <label class="label required-label">Support Type</label>
-
-                    <div class="control">
-
-                        <div class="select">
-                            <select name="support" id="supportselect">
-                                <option value="" disabled="" selected="">Select support type</option>
-                                <option value="Blogs">Blogs</option>
-                                <option value="Technical">Technical</option>
-                                <option value="CopyRightIssue">CopyRight Issue</option>
-                                <option value="SourceCodeAssistance">Source Code Assistance</option>
-                                <option value="BugReportingFeatureRequests">Bug Reporting &amp; Feature Requests
-                                </option>
-                                <option value="other">other</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="field projectCatogo" style="display: none;">
-
-                    <label class="label required-label">Project</label>
-
-                    <div class="control">
-
-                        <div class="select">
-
-                            <select style="margin-bottom: 2px;" name="projectCato" id="projectCatogo"
-                                onchange="showLink()">
-                                <option value="" disabled="" selected="">Select Project</option>
-                                <option value="None">None</option>
-                                <option value="SMPUnity">SMP Unity</option>
-                                <option value="UnityFeedback">Unity Feedback</option>
-                                <option value="CentreTheMessageCpp">Centre The Message Cpp</option>
-                                <option value="QGCCLI">Quiz Game Cpp CLI</option>
-                                <option value="MIbnEKhalidWeb">MIbnEKhalid.github.io</option>
-                                <option value="MIbnEKhalidSubWeb">*.MIbnEKhalid.github.io</option>
-                                <option value="WFV">Win-Fake-Virus</option>
-                                <option value="other">other</option>
-                            </select>
-
-                            <a id="projectLink" href="" target="_blank">Visit Project Link <i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="field otherProjecCato" style="display: none;">
-                    <label class="label required-label">Project Name</label>
-                    <div class="control">
-                        <input type="text" id="otherProjecCatO" placeholder="Enter Project Name" name="projectCatoN" />
-                    </div>
-                </div>
-
+         
                 <div class="field">
                     <label class="label required-label">Name</label>
                     <div class="control">
-                        <div class="input"><input type="text" placeholder="Enter Your Name" name="UserName" required="">
-                        </div>
+                        <div class="input"><input type="text" placeholder="Enter Your Name" name="UserName" required=""></div>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label required-label">Email</label>
                     <div class="control">
-                        <div class="input"><input type="email" placeholder="Enter Your Email" name="Email" required="">
-                        </div>
+                        <div class="input"><input type="email" placeholder="Enter Your Email" name="Email" required=""></div>
                     </div>
                 </div>
 
-                <!-- Support Field Appear When Feedback is Selected -->
-
-                <div class="field ratingWeb" style="display: none;">
-                    <label class="label">Rating</label>
-                    <requirAs style="color: red;">*</requirAs>
-                    <div class="control">
-                        <div class="rating">
-                            <label>
-                                <input type="radio" name="stars" value="1">
-                                <span class="fa fa-star icon"></span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="2">
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="3">
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="4">
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="5">
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                                <span class="fa fa-star icon"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Support Field Appear When Collabration & Support is Selected -->
-
-                <div class="field phoneField" style="display: none;">
-                    <label class="label">Phone Number</label>
-                    <div class="control">
-                        <input type="text" id="mobile_code" placeholder="Enter Phone Number" name="Number" />
-                    </div>
-                </div>
 
                 <div class="field">
                     <label class="label required-label">Message</label>
-                    <div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message"
-                            rows="4" required=""></textarea></div>
+                    <div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message" rows="4" required=""></textarea></div>
                 </div>
 
                 <div class="notification is-info">
                     <p>
-                        <strong>Note:</strong> For Quicker Assistance, Contact Us On Social Media. Email Responses May
-                        Take 1-2 Business Days.
+                        <strong>Note:</strong> For Support or Project Inquiry, Please Visit <a class="links" href="https://mbktechstudio.com/Support/">Support & Contact</a> Page.
                     </p>
                 </div>
 
-                <div class="notification is-link">
-                    <p>
-                        If The Form Is Not Working, <a class="links" href="mailto:support@mbktechstudio.com?body=Hello%20MBK%20Tech%20Studio%20Support%20Team,%0D%0A%0D%0A
-              I%20Am%20Having%20An%20Issue%20Submitting%20The%20Form,%20So%20Here%20Are%20Details:%0D%0A
-              - Support%20Type%20(if%20applicable):%20%0D%0A
-              - Project%20Name%20(if%20applicable):%20%0D%0A
-              - Phone%20Number%20(if%20applicable):%20%0D%0A
-              - Other%20Contact%20Email%20(if%20applicable):%20%0D%0A%0D%0A
-              Name:%20%0D%0A
-              Message:%20%0D%0A%0D%0A">Click Here</a> To Write A Direct Email.
-                    </p>
-                </div>
+        
 
                 <div class="button field is-grouped" style="display: flex; justify-content: center;">
-                    <div class="control"><button class="button is-primary" type="submit"
-                            id="submit-button">Submit</button></div>
+                    <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
                 </div>
 
-                <div id="message"
-                    style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;">
-                </div>
+                <div id="message" style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;"></div>
+
 
             </form>
 
