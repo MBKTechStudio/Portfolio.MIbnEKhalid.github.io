@@ -38,7 +38,7 @@
     position: absolute;
     top: 7px;
     right: 5px;
-    background: url(Images/close-icon.svg) 0 0 / 20px 20px no-repeat;
+    background: url(https://mbktechstudio.com/Assets/Images/close-icon.svg) 0 0 / 20px 20px no-repeat;
 }
 
 #cookieNotice #closeIcon:hover {
